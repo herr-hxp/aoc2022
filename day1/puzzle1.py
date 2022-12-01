@@ -29,4 +29,4 @@ for i in range(0,len(res)):
     if res[i] > max:
         max = res[i]
 
-endmsg(str(max))
+endmsg(max)
