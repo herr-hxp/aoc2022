@@ -13,11 +13,14 @@ with open('input', 'r') as file:
             sumlist.append(sum)
             sum = 0
 
-# set the first item in the list to the largest number and compare the rest, if it's bigger we make the variable reflect the new number
-max = sumlist[0]
-for num in sumlist:
-    if num > max:
-        max = num
+# sort the list of sums in reverse order
+sumlist.sort(reverse=True)
 
-# print out the biggest number we could find in the list
-print("The elf carrying the most has a total of:",max)
+# part 1
+# print out the biggest sum
+print("The elf carrying the most has a total of:",sumlist[0])
+
+# part 2
+# add the three biggest sums together
+newsum = sumlist[0] + sumlist[1] + sumlist[2]
+print("The three elfs carrying the most has a total of:",newsum)
