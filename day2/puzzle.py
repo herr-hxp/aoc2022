@@ -54,25 +54,25 @@ def parttwo(moves):
     # find out which shape I need to chose
     match outcome:
         case "X": # I need to lose
-            if elf_move == "A":
+            if elf_move == "A": # elf has rock, I need scissors to lose
                 player_move = "Z"
-            elif elf_move == "B":
+            elif elf_move == "B": # elf has paper, I need rock to lose
                 player_move = "X"
-            elif elf_move == "C":
+            elif elf_move == "C": # elf has scissors, I need paper to lose
                 player_move = "Y"
         case "Y": # I need a draw
-            if elf_move == "A":
+            if elf_move == "A":  # elf has rock, I need a rock to tie
                 player_move = "X"
-            elif elf_move == "B":
+            elif elf_move == "B": # elf has paper, I need paper to tie
                 player_move = "Y"
-            elif elf_move == "C":
+            elif elf_move == "C": # elf has scissors, I need scissors to tie
                 player_move = "Z"
         case "Z": # I need to win
-            if elf_move == "A":
+            if elf_move == "A": # elf has rock, I need paper to win
                 player_move = "Y"
-            elif elf_move == "B":
+            elif elf_move == "B": # elf has paper, I need scissors to win
                 player_move = "Z"
-            elif elf_move == "C":
+            elif elf_move == "C": # elf has scissors, I need rock to win
                 player_move = "X"
 
     # start comparing the moves against each other
