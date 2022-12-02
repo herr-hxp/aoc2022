@@ -75,7 +75,28 @@ def parttwo(moves):
             elif elf_move == "C":
                 player_move = "X"
 
-
+    # start comparing the moves against each other
+    match player_move:
+        case "X": # rock
+            roundscore += rock
+            if elf_move == "A": # rock
+                roundscore += draw
+            elif elf_move == "C": # scissors
+                roundscore += win
+        case "Y": # paper
+            roundscore += paper
+            if elf_move == "A": # rock
+                roundscore += win
+            elif elf_move == "B": # paper
+                roundscore += draw
+        case "Z": # scissors
+            roundscore += scissors
+            if elf_move == "B": # paper
+                roundscore += win
+            elif elf_move == "C": # scissors
+                roundscore += draw
+    # send back the score of the round
+    return roundscore
 
 # open the input file 
 with open ('input' , 'r') as file:
@@ -84,7 +105,10 @@ with open ('input' , 'r') as file:
     # send each line to the game function above and add the returned roundscore to the totalpoints
     for line in data:
         totalpoints += rps(line)
+        totalpointsparttwo += parttwo(line)
 
 # part 1
 print("Part 1 - The total amount of points:",totalpoints)
-        
+
+# part 2
+print ("Part 2 - The total amount of points:",totalpointsparttwo)
