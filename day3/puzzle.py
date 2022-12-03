@@ -4,6 +4,7 @@ def countprio(k):
     else:
         return ord(k) - ord('A') + 27
 
+# part 1
 pt1prio = 0
 with open ('input', 'r') as file:
     data = [x.rstrip() for x in file]
@@ -20,8 +21,7 @@ with open ('input', 'r') as file:
         pt1prio += countprio(key)
 print("Part 1:",pt1prio)
 
-
-
+# part 2
 pt2prio = 0
 with open ('input', 'r') as file:
     # part 2 is a bit different since we need to compare each 3 lines but basically the same
@@ -33,5 +33,4 @@ with open ('input', 'r') as file:
                 pt2prio += countprio(key)
                 break
         i += 3
-
 print("Part 2:",pt2prio)
