@@ -24,7 +24,7 @@ print("Part 1:",pt1prio)
 # part 2
 pt2prio = 0
 with open ('input', 'r') as file:
-    # part 2 is a bit different since we need to compare each 3 lines but basically the same
+    # part 2 is a bit different since we need to compare each 3 lines but basically the same except we traverse the lines char by char instead of using the above set()
     data = [line for line in file]
     i = 0
     while i < len(data):
