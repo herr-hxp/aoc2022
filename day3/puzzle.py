@@ -16,7 +16,7 @@ with open ('input', 'r') as file:
         # put each character of the strings in a set
         sleft = set(left)
         sright = set(right)
-        # shove em to the countprio function
+        # shove the common value to the countprio function
         key, = sleft & sright
         pt1prio += countprio(key)
 print("Part 1:",pt1prio)
